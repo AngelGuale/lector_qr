@@ -9,7 +9,7 @@ GPIO.setup(17, GPIO.OUT) #always on
 GPIO.setup(15, GPIO.OUT) #bad recognition
 
 codigos_leidos=[]
-patron=re.compile('[0-9]{2}_[0-9]{2}_[0-9]{6}')
+patron=re.compile('[0-9]{1,2}_[0-9]{2}_[0-9]{6,12}')
 try:
 	cmdping = "zbarcam --prescale=10x10 --nodisplay /dev/video0"
 	p = subprocess.Popen(cmdping, shell=True, stdout=subprocess.PIPE)
