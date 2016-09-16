@@ -28,7 +28,7 @@ try:
 			try:
 				out2=out.split(":")
 				print out2[1]
-				if out2[1] not in codigos_leidos:
+				if out2[1] not in codigos_leidos and patron.match(out2[1]):
 					print "aqui se debe prender la luz, todo ok"
 					GPIO.output(18, True)
 					GPIO.output(17, False)
